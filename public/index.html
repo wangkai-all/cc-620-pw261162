@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>岗位课程推荐 · 时间切分对照台</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>岗位课程推荐 · 时间切分对照台</h1>
+    <p class="subtitle">
+      虚构员工 × 岗位课程完成事件 · 候选生成只使用 T 时刻可见目录与历史事件 ·
+      评价严格区分「看不到课程」与「看到了但没完成」
+    </p>
+  </header>
+
+  <section class="timeline" id="timeline" data-evidence-result="timeline">
+    <h2>实验时间线</h2>
+    <div class="timeline-track" id="timelineTrack">加载中…</div>
+  </section>
+
+  <section class="controls">
+    <button id="btnReplay" class="btn btn-primary" type="button">① 重放原推荐规则</button>
+    <button id="btnAdd" class="btn btn-warning" type="button">② 新增后开放课程</button>
+    <button id="btnDiff" class="btn btn-success" type="button">③ 查看候选与评估差异</button>
+    <span id="actionStatus" class="action-status" data-evidence-result="action-status">未开始</span>
+  </section>
+
+  <section class="error-box" id="errorBox" data-evidence-result="error" hidden></section>
+
+  <main class="panels">
+    <section class="panel" id="panelReplay" data-evidence-result="replay" hidden>
+      <h2>① 重放原推荐规则（基线目录 C1~C8）</h2>
+      <div id="replayBody"></div>
+    </section>
+
+    <section class="panel" id="panelAdd" data-evidence-result="add-late-course" hidden>
+      <h2>② 新增后开放课程 C9</h2>
+      <div id="addBody"></div>
+    </section>
+
+    <section class="panel" id="panelDiff" data-evidence-result="diff" hidden>
+      <h2>③ 候选与评估差异（正确 vs 错误时间切分）</h2>
+      <div id="diffBody"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    本地样例数据 · 无外部服务 · Node.js 内置模块实现 · 同一次会话内可反复核对前后结果
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
